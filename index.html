@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <section class="weather-section">
+        <div class="container">
+            <div class="weather-title">
+                <h1 id="title">Find Weather Forecast in a City</h1>
+                <p>For the next 24 hours</p>
+            </div>
+            <div class="search-box">
+                <img src="./assets/search-icon.png" alt="">
+                <input type="text" id="weather-search" placeholder="ex: Jakarta,Tokyo,London">
+                <a href="#" id="search-btn" onclick="findWeather()">Search</a>
+                <div id="autocomplete-box-wrapper">
+                </div>
+            </div>
+            <div class="weather-cards-wrapper">
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-card">
+                    <div class="date-wrapper">
+                        <div class="date loading">25 July 2022</div>
+                        <div class="time loading">15:00</div>
+                    </div>
+                    <div class="weather-card-content">
+                        <div class="detail-wrapper">
+                            <div class="weather-temp loading">19°C</div>
+                            <div class="weather-humidity loading">Humidity: 80%</div>
+                        </div>
+                        <div class="weather-icon loading">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather-icon">
+                        </div>
+                        <div class="description-wrapper">
+                            <div class="weather-description loading">Sunny</div>
+                            <div class="weather-feels-like loading">Feels like 21°C</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --black: #2b2b2b;
+    --white: #ffffff;
+    --blue: #446ef8;
+    --light-blue: #e1f8fe;
+    --bold: 700;
+    --semi-bold: 600;
+    --medium: 500;
+    --regular: 400;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    padding:  0 6.25rem;
+}
+
+.loading{
+    position: relative;
+    background: #D9D9D9;
+    padding: 0 1rem;
+    border-radius: 20px;
+    color: rgba(0, 0, 0, 0);
+}
+
+.loading::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255, 0) 0,
+      rgba(255,255,255, 0.2) 20%,
+      rgba(255,255,255, 0.5) 60%,
+      rgba(255,255,255, 0) 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+}
+
+.loading > * {
+    opacity: 0;
+}
+
+.weather-section .container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.weather-section .container .weather-title{
+    text-align: center;
+}
+
+.weather-section .container .weather-title #title{
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.weather-section .container .weather-title > p{
+    font-size: 1.25rem;
+    opacity: 0.7;
+}
+
+.weather-section .container .search-box{
+    position: relative;
+    width: 40vw;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.weather-section .container .search-box > input{
+    width: 100%;
+    padding-block: 0.75rem;
+    border: none;
+    outline: none;
+    font-size: 1.25rem;
+}
+
+.weather-section .container .search-box > input::placeholder{
+    opacity: 0.6;
+}
+
+.weather-section .container .search-box #search-btn{
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background: var(--blue);
+    font-size: 18px;
+    font-weight: var(--semi-bold);
+    color: var(--white);
+}
+
+.weather-section .container .search-box #autocomplete-box-wrapper{
+    z-index: 1;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.weather-section .container .search-box #autocomplete-box-wrapper .autocomplete-box{
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    font-size: 18px;
+    color: var(--black);
+    background-color: var(--white);
+    transition: 0.3s background-color ease-in-out, 0.3s color ease-in-out;
+}
+
+.weather-section .container .search-box #autocomplete-box-wrapper .autocomplete-box:hover{
+    background-color: var(--blue);
+    color: var(--white);
+}
+.weather-section .container .weather-cards-wrapper{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card{
+    min-width: 298px;
+    padding: 2rem 1.5rem;
+    box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.1), 0px 0px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--black);
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card .date-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card .date-wrapper .date{
+    font-size: 1.25rem;
+    font-weight: var(--semi-bold);
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card .weather-card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card .date-wrapper .time,
+.weather-section .container .weather-cards-wrapper .weather-card .weather-card-content .detail-wrapper .weather-humidity,
+.weather-section .container .weather-cards-wrapper .weather-card .weather-card-content .description-wrapper .weather-feels-like{
+    opacity: 0.7;
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card .weather-card-content .detail-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card .weather-card-content .detail-wrapper .weather-temp{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card .weather-card-content .description-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.weather-section .container .weather-cards-wrapper .weather-card .weather-card-content .description-wrapper .weather-description{
+    font-size: 1.5rem;
+    font-weight: var(--semi-bold);
+}
