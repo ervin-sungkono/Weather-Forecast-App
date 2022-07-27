@@ -4,3 +4,4 @@ Weather Forecast App using Javascript and OpenWeatherMap API to fetch weather da
 ## Features
 1. Search and Filter cities
 2. Weather data for 24 hours
+3. Dark Mode
