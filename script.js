@@ -122,3 +122,9 @@ searchBox.addEventListener('focus', () => {
 searchBox.addEventListener('blur', () => {
     setTimeout(() => autoCompleteBox.style.display = 'none', 100);
 })
+
+// Dark Mode
+toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
+    _id('toggle-btn-circle').classList.toggle('active')
+}

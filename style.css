@@ -4,7 +4,6 @@
     --black: #2b2b2b;
     --white: #ffffff;
     --blue: #446ef8;
-    --light-blue: #e1f8fe;
     --bold: 700;
     --semi-bold: 600;
     --medium: 500;
@@ -19,6 +18,14 @@
 
 body{
     font-family: 'Inter', sans-serif;
+    background: #fafafa;
+    transition: 0.3s background-color ease-in-out;
+}
+
+body.dark-mode{
+    --black: #ffffff;
+    --white: #2b2b2b;
+    background-color: #1e1e1e;
 }
 
 a{
@@ -74,8 +81,41 @@ a{
     gap: 2rem;
 }
 
+.weather-section .container .button-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--black);
+}
+
+.weather-section .container .button-wrapper .toggle-btn{
+    position: relative;
+    cursor: pointer;
+    padding: 4px 8px;
+    width: 64px;
+    height: 32px;
+    background-color: var(--white);
+    box-shadow: 5px 12px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+}
+
+.weather-section .container .button-wrapper .toggle-btn #toggle-btn-circle{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 100px;
+    background-color: var(--blue);
+    transform: translateX(0);
+    transition: 0.3s transform ease-in-out;
+}
+
+.weather-section .container .button-wrapper .toggle-btn #toggle-btn-circle.active{
+    transform: translate(100%);
+}
+
 .weather-section .container .weather-title{
     text-align: center;
+    color: var(--black);
 }
 
 .weather-section .container .weather-title #title{
@@ -99,6 +139,8 @@ a{
     padding: 0.5rem 1rem 0.5rem 2rem;
     border-radius: 12px;
     box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    transition: 0.3s background-color ease-in-out;
 }
 
 .weather-section .container .search-box > input{
@@ -107,9 +149,13 @@ a{
     border: none;
     outline: none;
     font-size: 1.25rem;
+    background-color: var(--white);
+    color: var(--black);
+    transition: 0.3s background-color ease-in-out;
 }
 
 .weather-section .container .search-box > input::placeholder{
+    color: var(--black);
     opacity: 0.6;
 }
 
@@ -119,7 +165,7 @@ a{
     background: var(--blue);
     font-size: 18px;
     font-weight: var(--semi-bold);
-    color: var(--white);
+    color: #ffffff;
 }
 
 .weather-section .container .search-box #autocomplete-box-wrapper{
@@ -144,8 +190,17 @@ a{
 
 .weather-section .container .search-box #autocomplete-box-wrapper .autocomplete-box:hover{
     background-color: var(--blue);
-    color: var(--white);
+    color: #ffffff;
 }
+
+.weather-section .container .search-box > svg{
+    width: 32px;
+}
+
+.weather-section .container .search-box > svg > path{
+    stroke: var(--black);
+}
+
 .weather-section .container .weather-cards-wrapper{
     padding: 2rem;
     width: 100%;
@@ -163,6 +218,8 @@ a{
     flex-direction: column;
     gap: 1.5rem;
     color: var(--black);
+    background-color: var(--white);
+    transition: 0.3s background-color ease-in-out;
 }
 
 .weather-section .container .weather-cards-wrapper .weather-card .date-wrapper{
