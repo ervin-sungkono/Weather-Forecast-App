@@ -11,9 +11,10 @@ let cityList = [];
 fetch('./assets/city.list.json')
     .then(response => response.json())
     .then(data => {
-        data.forEach(obj => {
-            cityList.push(obj.name + ', ' + obj.country);
-        });
+        cityList = data.map(obj => 
+            (obj.name + ', ' + obj.country)
+        );
+        cityList = [...new Set(cityList)];
     })
     .catch((error)=>console.log(error));
 
@@ -39,7 +40,7 @@ let fetchWeather = (cityName) => {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&cnt=8&appid=' + apiKey + '&units=metric')
     .then(response => response.json())
     .then(data => {
-        data.list.map((obj,index)=>{
+        data.list.forEach((obj,index)=>{
             let date = new Date(obj.dt_txt).toLocaleDateString('en-us',options);
             let time = obj.dt_txt.split(' ')[1].slice(0,5);
             let feelsLike = Math.round(obj.main.feels_like,1);
@@ -52,7 +53,6 @@ let fetchWeather = (cityName) => {
             .split(' ')
             .map((string)=>string.charAt(0).toUpperCase() + string.substring(1))
             .join(' ');
-
             // Display the data in HTML
             dateList[index].innerHTML = date;
             timeList[index].innerHTML = time;
@@ -61,9 +61,8 @@ let fetchWeather = (cityName) => {
             humidityList[index].innerHTML = 'Humidity: ' + humidity + '%';
             iconList[index].innerHTML = '<img src="'+ iconSrc +'" alt="'+ weatherDescription + ' icon">'
             descriptionList[index].innerHTML = weatherDescription;
-            
-            loadingElements.forEach((element) => element.classList.remove('loading'));
         });
+        loadingElements.forEach((element) => element.classList.remove('loading'));
     })
     .catch((error)=>console.log(error));
 }
@@ -93,6 +92,10 @@ filterCities = (cityName) => {
 let timer;
 const searchBox = _id('weather-search');
 searchBox.addEventListener('keyup', (e)=>{
+    if(e.key === "Enter"){
+        findWeather();
+        return;
+    }
     clearTimeout(timer);
     timer = setTimeout(() => filterCities(e.target.value), 1000);
 });
