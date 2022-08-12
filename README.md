@@ -6,6 +6,9 @@ Weather Forecast App using Javascript and OpenWeatherMap API to fetch weather da
 2. Weather data for 24 hours
 3. Dark Mode
 
+### Preview Image
+<img src="./assets/preview-img.png" alt="Preview Image" width=480>
+
 [Click here](https://weather-forecast-app-09.glitch.me) to preview the project!
 
 Note: Search and Filter function might take up to 1 minutes to work if you are previewing from Glitch for first time.
